@@ -549,7 +549,14 @@ export default {
 				return 0;
 			}
 			return this.currentReviewAssignments.filter(review => {
-				return review.statusId >= pkp.const.REVIEW_ASSIGNMENT_STATUS_RECEIVED;
+				switch (review.statusId) {
+					case pkp.const.REVIEW_ASSIGNMENT_STATUS_RECEIVED:
+					case pkp.const.REVIEW_ASSIGNMENT_STATUS_COMPLETE:
+					case pkp.const.REVIEW_ASSIGNMENT_STATUS_THANKED:
+						return true;
+					default:
+						return false;
+				}
 			}).length;
 		},
 
