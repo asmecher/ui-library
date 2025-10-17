@@ -135,15 +135,15 @@ export const WorkflowConfig = {
 				},
 			});
 
-			items.push({
-				component: 'DiscussionManagerLegacy',
-				props: {submissionId: submission.id, stageId: selectedStageId},
-			});
-
 			if (pkp.context.featureFlags?.enableNewDiscussions) {
 				items.push({
 					component: 'DiscussionManager',
 					props: {submission, submissionStageId: selectedStageId},
+				});
+			} else {
+				items.push({
+					component: 'DiscussionManagerLegacy',
+					props: {submissionId: submission.id, stageId: selectedStageId},
 				});
 			}
 
@@ -192,18 +192,18 @@ export const WorkflowConfig = {
 				},
 			});
 
-			items.push({
-				component: 'DiscussionManagerLegacy',
-				props: {
-					submissionId: submission.id,
-					stageId: selectedStageId,
-				},
-			});
-
 			if (pkp.context.featureFlags?.enableNewDiscussions) {
 				items.push({
 					component: 'DiscussionManager',
 					props: {submission, submissionStageId: selectedStageId},
+				});
+			} else {
+				items.push({
+					component: 'DiscussionManagerLegacy',
+					props: {
+						submissionId: submission.id,
+						stageId: selectedStageId,
+					},
 				});
 			}
 
@@ -243,18 +243,18 @@ export const WorkflowConfig = {
 		getPrimaryItems: ({submission, selectedStageId}) => {
 			const items = [];
 
-			items.push({
-				component: 'DiscussionManagerLegacy',
-				props: {
-					submissionId: submission.id,
-					stageId: selectedStageId,
-				},
-			});
-
 			if (pkp.context.featureFlags?.enableNewDiscussions) {
 				items.push({
 					component: 'DiscussionManager',
 					props: {submission, submissionStageId: selectedStageId},
+				});
+			} else {
+				items.push({
+					component: 'DiscussionManagerLegacy',
+					props: {
+						submissionId: submission.id,
+						stageId: selectedStageId,
+					},
 				});
 			}
 
@@ -274,18 +274,18 @@ export const WorkflowConfig = {
 		getPrimaryItems: ({submission, selectedStageId, selectedReviewRound}) => {
 			const items = [];
 
-			items.push({
-				component: 'DiscussionManagerLegacy',
-				props: {
-					submissionId: submission.id,
-					stageId: selectedStageId,
-				},
-			});
-
 			if (pkp.context.featureFlags?.enableNewDiscussions) {
 				items.push({
 					component: 'DiscussionManager',
 					props: {submission, submissionStageId: selectedStageId},
+				});
+			} else {
+				items.push({
+					component: 'DiscussionManagerLegacy',
+					props: {
+						submissionId: submission.id,
+						stageId: selectedStageId,
+					},
 				});
 			}
 
